@@ -2,7 +2,7 @@
 
 End-to-end simulation workflow for Relativity Space's **Terran 1** (public-spec approximation): 3‑DOF ascent → CFD‑based aero database (OpenFOAM) → propulsion maps → 6‑DOF + GNC → Monte Carlo dispersions.
 
-> Educational/portfolio project using public information only. No proprietary data.
+> Portfolio project using public information only. No proprietary data.
 
 ## Goals
 - Build a reproducible **vehicle simulation stack**: trajectory, aerodynamics, propulsion, guidance & control.
@@ -26,22 +26,11 @@ terran1-sim/
   /runs/         # Timestamped run artifacts
 ```
 
-## Getting Started
-1. **Clone** this repo, create a virtual environment (optional), and install any Python deps you add later.
-2. Review **`config.yaml`** – it centralizes vehicle & mission parameters.
-3. Start with **`/traj3dof`** for a nominal ascent, then replace placeholder aero with **`/aero`** results.
-4. Integrate **PropMap** and move to **6‑DOF + GNC**, then run **Monte Carlo**.
-
-## Files to Look At First
-- [`config.yaml`](./config.yaml) – vehicle/mission configuration.
-- [`/docs/assumptions.md`](./docs/assumptions.md) – decisions & ranges.
-- [`/data/`](./data/) – put your `AeroDB_v1.csv` and `PropMap_v1.csv` here.
-
-## Results (update as you go)
+## Results
 Add key figures:
 - Nominal ascent (altitude/velocity/q vs time)
 - Cd vs Mach from OpenFOAM
 - Monte Carlo CDFs and tornado plots
 
 ## License
-MIT (or your preferred license)
+
