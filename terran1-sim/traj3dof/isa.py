@@ -57,3 +57,30 @@ def _find_layer(h_m: float) -> Tuple[ISALayer, float, int]:
     # If above our last defined layer, clamp to the last layer for now.
     last = ISA_LAYERS[-1]
     return last, float('inf'), len(ISA_LAYERS)-1
+
+def _tp_in_layer(h_m: float):
+    """
+    Compute temperature T [K] and pressure p [Pa] at altitude h_m within the
+    current ISA layer using base (T0, p0) and lapse rate L.
+    """
+    layer, h_next, _ = _find_layer(h_m)
+    h0, T0, p0, L = layer.h0, layer.T0, layer.p0, layer.L
+    dh = h_m - h0
+
+    if abs(L) < 1e-12:
+        T = T0
+        p = p0 * math.exp(-G0 * dh / (R_AIR * T0))
+    else:
+        T = T0 + L * dh
+        p = p0 * (T/T0) ** (-G0 / (R_AIR * L))
+
+return T, p
+
+def isa_tp(h_m: float):
+    """
+    Public API (Block 2): return (T [K], p [Pa]) at altitude h_m using ISA layers.
+    For now this is up to ~47 km (see ISA_LAYERS). Higher can be added later.
+    """
+    if h_m < 0.0:
+        h_m = 0.0
+    return _tp_in_layer(h_m)
