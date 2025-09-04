@@ -1,4 +1,3 @@
-
 """
 traj3dof.config_loader
 ----------------------
@@ -10,7 +9,6 @@ the active configuration to a run directory for reproducibility.
 from __future__ import annotations
 import math
 import copy
-import json
 from pathlib import Path
 from typing import Any, Dict, Optional
 
