@@ -1,0 +1,46 @@
+vehicle:
+  name: Terran 1
+  diameter_m: 2.28
+  length_m: 33.5
+  stages: 2
+  stage1:
+    engines: 9
+    engine_type: Aeon 1
+    thrust_SL_kN: 900.0
+    isp_SL_s: 310.0
+    isp_vac_s: 330.0
+    prop_mass_kg: 92000.0
+    dry_mass_kg: 9000.0
+    burn_time_s: 160.0
+  stage2:
+    engines: 1
+    engine_type: AeonVac
+    thrust_vac_kN: 126.0
+    isp_vac_s: 358.0
+    prop_mass_kg: 18000.0
+    dry_mass_kg: 2000.0
+    burn_time_s: 380.0
+mission:
+  launch_site: CCAFS LC-16
+  target_orbit:
+    altitude_km: 200.0
+    inclination_deg: 28.5
+  payload_capacity_kg: 1250.0
+aero:
+  aero_db_csv: data/AeroDB_v1.csv
+  default_Cd: 0.3
+simulation:
+  dt_s: 0.1
+  max_time_s: 900.0
+  gravity_mu: 398600441800000.0
+  earth_radius_m: 6378137.0
+  pitch_program:
+    pitchover_start_s: 10.0
+    pitchover_rate_deg_per_s: 0.4
+    min_fpa_deg: 0.0
+  constraints:
+    max_q_Pa: 40000.0
+    max_axial_g: 5.0
+mass:
+  payload_mass_kg: 1000.0
+  fairing_mass_kg: 300.0
