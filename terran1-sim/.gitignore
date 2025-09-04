@@ -1,0 +1,55 @@
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+.eggs/
+*.egg-info/
+dist/
+build/
+.venv/
+venv/
+.env/
+.ipynb_checkpoints/
+.pytest_cache/
+.mypy_cache/
+.coverage
+htmlcov/
+
+# Editors / OS
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/
+
+# MATLAB
+*.asv
+*.mex*
+
+# OpenFOAM (ignore heavy outputs & processors)
+postProcessing/
+processor*/
+processor-*/
+dynamicCode/
+log.*
+*.log
+*.OpenFOAM
+*.foam
+*.vtk
+*.vtp
+*.vtu
+# Common time directories (keep base '0' if you want by uncommenting next line)
+# 0/
+1*/
+2*/
+3*/
+4*/
+5*/
+6*/
+7*/
+8*/
+9*/
+[1-9]*/
+
+# Misc
+*.zip
+*.tar.gz

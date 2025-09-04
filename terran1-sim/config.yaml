@@ -1,0 +1,33 @@
+vehicle:
+  name: Terran 1
+  diameter_m: 2.28
+  length_m: 33.5
+  stages: 2
+  stage1:
+    engines: 9
+    engine_type: Aeon 1
+    thrust_SL_kN: 100
+    isp_SL_s: 310
+    isp_vac_s: 330
+    prop_mass_kg: 92000
+    dry_mass_kg: 9000
+  stage2:
+    engines: 1
+    engine_type: AeonVac
+    thrust_vac_kN: 126
+    isp_vac_s: 358
+    prop_mass_kg: 18000
+    dry_mass_kg: 2000
+mission:
+  launch_site: CCAFS LC-16
+  target_orbit:
+    altitude_km: 200
+    inclination_deg: 28.5
+  payload_capacity_kg: 1250
+atmosphere:
+  model: US Standard Atmosphere 1976
+  dispersion: Earth-GRAM
+simulation:
+  three_DOF: true
+  six_DOF: true
+  MonteCarlo_runs: 500
