@@ -84,3 +84,20 @@ def isa_tp(h_m: float):
     if h_m < 0.0:
         h_m = 0.0
     return _tp_in_layer(h_m)
+
+def isa(h_m: float)
+    """
+    Public API (Block 3): returns ( rho [kg/m^3], a [m/s], T [K], p [Pa]
+    at altitude h_m using ISA layers
+    """
+    if h_m < 0.0:
+        h_m = 0.0
+    # Temperature and pressure from isa
+        T, p = isa_tp(h_m)
+
+    # Density (earth air, eqn of state)
+        rho = p / (R_AIR * T)
+    # Sound speed
+        a = (GAMMA * R_AIR * T) ** 0.5
+
+        return rho, a, T, p
